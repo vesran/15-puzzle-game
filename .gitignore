@@ -1,0 +1,5 @@
+.idea
+src/test
+src/main/java/solver
+target
+*.iml
