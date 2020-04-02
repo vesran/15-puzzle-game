@@ -3,7 +3,7 @@ Jigsaw game puzzle
 
 15-puzzle game is a sliding puzzle. Click on a tile to move it to the empty position and try to recover the hidden image.
 
-<img src="https://github.com/vesran/15-puzzle-game/blob/master/src/main/resources/bird.png" width="300"> <img src="https://github.com/vesran/15-puzzle-game/blob/master/src/main/resources/bird_mixed.png" width="300" align='right'>
+<img src="https://github.com/vesran/15-puzzle-game/blob/master/src/main/resources/bird.png" width="350"> <img src="https://github.com/vesran/15-puzzle-game/blob/master/src/main/resources/bird_mixed.png" width="350" align='right'>
 
 ### Features : 
 * Grid size can be changed
