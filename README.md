@@ -8,7 +8,8 @@ Puzzle game
 ### Features : 
 * Grid size can be changed
 * Put the image you want
-* Solver (soon)
+* Solver (BFS, A*...)
+* Animation of a solution
 
 ### Build with
 * <a href='https://maven.apache.org/'>Maven</a> - Dependency management
