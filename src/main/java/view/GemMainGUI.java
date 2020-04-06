@@ -21,7 +21,8 @@ public class GemMainGUI extends Application {
     public static final int WIDTH = 400;
     public static final int GRID_SIZE = 3;
     public static final String url = "https://66.media.tumblr.com/009b6f44bd6b2876c97c8afa2955ae6f/tumblr_pkyp42fG3L1v46ab0o1_400.jpg";
-    private boolean autoSolving = true;
+    private final boolean autoSolving = true;
+    private final long animationTimeElapsed = 800_000_000;
 
     private GemBoard container;
 
@@ -56,13 +57,12 @@ public class GemMainGUI extends Application {
 
     private void runSolver(final GraphicsContext gc, final List<Piece> actions, Board model) {
         Iterator<Piece> it = actions.iterator();
-
         new AnimationTimer() {
             private long lastUpdate = 0;
 
             @Override
             public void handle(long now) {
-                if (now - lastUpdate > 800_000_000) {
+                if (now - lastUpdate > animationTimeElapsed) {
                     // Erase former drawings
                     gc.clearRect(0, 0, WIDTH, WIDTH);
 
