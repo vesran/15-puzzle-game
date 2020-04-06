@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 public class GemMainGUI extends Application {
 
     public static final int WIDTH = 400;
-    public static final int GRID_SIZE = 4;
+    public static final int GRID_SIZE = 2;
     public static final String url = "https://66.media.tumblr.com/009b6f44bd6b2876c97c8afa2955ae6f/tumblr_pkyp42fG3L1v46ab0o1_400.jpg";
 
     private GemBoard container;

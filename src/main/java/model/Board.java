@@ -12,6 +12,7 @@ public class Board implements Cloneable {
     private List<Piece> pieces;
     private int emptyPositionX;
     private int emptyPositionY;
+    private Piece triggered;
 
     private Board() {
         this.pieces = new ArrayList<>();
@@ -41,6 +42,14 @@ public class Board implements Cloneable {
         this.shuffle();
     }
 
+    public void setTriggered(Piece p) {
+        this.triggered = p;
+    }
+
+    public Piece getTriggered() {
+        return this.triggered;
+    }
+
     public List<Piece> getPieces() {
         return this.pieces;
     }
@@ -51,6 +60,14 @@ public class Board implements Cloneable {
 
     public int getHeight() {
         return this.boundY;
+    }
+
+    public int getEmptyPositionX() {
+        return this.emptyPositionX;
+    }
+
+    public int getEmptyPositionY() {
+        return this.emptyPositionY;
     }
 
     public void move(Piece currentPiece) {
@@ -167,8 +184,14 @@ public class Board implements Cloneable {
     }
 
     @Override
+    public int hashCode() {
+        return this.toString().hashCode();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o == this) return true;
+        if (!(o instanceof Board)) return false;
         Board another = (Board) o;
         if (this.emptyPositionX != another.emptyPositionX || this.emptyPositionY != another.emptyPositionY) {
             return false;
@@ -179,7 +202,7 @@ public class Board implements Cloneable {
         while (itThis.hasNext() && itAnother.hasNext()) {
             pthis = itThis.next();
             pano = itAnother.next();
-            if (pthis.getX() != pano.getX() || pthis.getY() != pano.getY()) {
+            if (pthis.getId() != pano.getId()) {
                 return false;
             }
         }
