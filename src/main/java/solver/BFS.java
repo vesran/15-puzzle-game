@@ -12,7 +12,6 @@ public class BFS implements Solver {
         // State : piece to move
 
         List<Piece> actions = new ArrayList<>();
-//        Set<Board> visited = new HashSet<>();
         HashMap<String, Board> visited = new HashMap<>();
         Queue<Board> toVisit = new ArrayDeque<>();
         Board current;
@@ -47,8 +46,8 @@ public class BFS implements Solver {
                     current.move(current.getTriggered());
                     current = visited.get(current.toString());
                 }
+                Collections.reverse(actions);
                 return actions;
-
             }
 
         }
