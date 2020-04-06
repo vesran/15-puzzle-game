@@ -11,6 +11,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 import model.Piece;
 import solver.BFS;
+import solver.DFS;
 import solver.Solver;
 
 import java.util.Iterator;
@@ -44,6 +45,7 @@ public class GemMainGUI extends Application {
             stage.setTitle("15-puzzle game -- autosolving");
             stage.setScene(scene);
             this.runSolver(gc, actions, model);
+            System.out.println("Number of actions : " + actions.size());
 
         } else {
             scene.setOnMouseClicked(new MouseController(model, this.container));
