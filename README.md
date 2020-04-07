@@ -14,7 +14,7 @@ Puzzle game
 ### Build with
 * <a href='https://maven.apache.org/'>Maven</a> - Dependency management
 
-### Solver
+### About the solvers
 Several AI algorithms have been implemented to solve a game instance as fast as possible
 and with minimal actions. The results are briefly shown below.
 
