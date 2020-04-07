@@ -16,7 +16,7 @@ public class DFS implements Solver {
         Stack<Board> toVisit = new Stack<>();
         Board current;
 
-        toVisit.add(board);
+        toVisit.push(board);
 
         int i = 0;
         while (!toVisit.isEmpty()) {

@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import model.Piece;
 import solver.BFS;
 import solver.DFS;
+import solver.IterativeDeepening;
 import solver.Solver;
 
 import java.util.Iterator;
@@ -40,7 +41,7 @@ public class GemMainGUI extends Application {
         this.container = new GemBoard(model);
 
         if (autoSolving) {
-            Solver solver = new BFS();
+            Solver solver = new IterativeDeepening();
             List<Piece> actions = solver.solve(model);
             stage.setTitle("15-puzzle game -- autosolving");
             stage.setScene(scene);
