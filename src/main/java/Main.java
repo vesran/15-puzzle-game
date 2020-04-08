@@ -1,17 +1,25 @@
 import model.Board;
-import solver.BFS;
-import solver.DFS;
-import solver.IterativeDeepening;
-import solver.Solver;
+import model.Piece;
+import solver.*;
+
+import java.util.List;
 
 public class Main {
 
     public static void main(String [] args) {
         Board b = new Board(3, 3);
-        Solver s = new IterativeDeepening();
-        System.out.println(s.solve(b));
-//        System.out.println(b.getPieces());
-//        System.out.println(b.moveablePieces());
-//        b.moveablePieces();
+        Solver s1 = new AStar();
+        Solver s2 = new BFS();
+
+//        System.out.println(b.getPieces().get(1));
+//        System.out.println(s.manhattan(b, b.getPieces().get(1)));
+
+        List<Piece> list = s1.solve(b);
+        List<Piece> list2 = s2.solve(b);
+        System.out.println(list);
+        System.out.println(list.size());
+        System.out.println(list2);
+        System.out.println(list2.size());
+
     }
 }

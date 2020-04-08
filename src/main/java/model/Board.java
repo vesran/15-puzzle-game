@@ -13,6 +13,7 @@ public class Board implements Cloneable {
     private int emptyPositionX;
     private int emptyPositionY;
     private Piece triggered;
+    private int depth;
 
     private Board() {
         this.pieces = new ArrayList<>();
@@ -42,12 +43,20 @@ public class Board implements Cloneable {
         this.shuffle();
     }
 
+    public void setDepth(int depth) {
+        this.depth = depth;
+    }
+
     public void setTriggered(Piece p) {
         this.triggered = p;
     }
 
     public Piece getTriggered() {
         return this.triggered;
+    }
+
+    public int getDepth() {
+        return this.depth;
     }
 
     public List<Piece> getPieces() {

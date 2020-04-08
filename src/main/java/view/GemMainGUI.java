@@ -10,10 +10,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 import model.Piece;
-import solver.BFS;
-import solver.DFS;
-import solver.IterativeDeepening;
-import solver.Solver;
+import solver.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -25,6 +22,7 @@ public class GemMainGUI extends Application {
     public static final String url = "https://66.media.tumblr.com/009b6f44bd6b2876c97c8afa2955ae6f/tumblr_pkyp42fG3L1v46ab0o1_400.jpg";
     private final boolean autoSolving = true;
     private final long animationTimeElapsed = 800_000_000;
+    private final Solver solver = new IterativeDeepening();
 
     private GemBoard container;
 
@@ -41,7 +39,6 @@ public class GemMainGUI extends Application {
         this.container = new GemBoard(model);
 
         if (autoSolving) {
-            Solver solver = new IterativeDeepening();
             List<Piece> actions = solver.solve(model);
             stage.setTitle("15-puzzle game -- autosolving");
             stage.setScene(scene);

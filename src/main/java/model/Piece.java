@@ -33,7 +33,7 @@ public class Piece implements Comparable<Piece>, Cloneable {
 
     @Override
     public String toString() {
-        return "p" + String.valueOf(this.id) + "(" + this.x + "," + this.y + ")";
+        return "p" + this.id + "(" + this.x + "," + this.y + ")";
     }
 
     @Override
