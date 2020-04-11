@@ -7,6 +7,13 @@ import java.util.*;
 
 public class IterativeDeepening implements Solver {
 
+    private int iterations;
+
+    @Override
+    public int getIterations() {
+        return this.iterations;
+    }
+
     private List<Piece> dfs(Board board, int limit) {
         // State : piece to move
 
@@ -50,6 +57,7 @@ public class IterativeDeepening implements Solver {
                     current = visited.get(current.toString());
                 }
                 Collections.reverse(actions);
+                this.iterations += i;
                 return actions;
             }
 
@@ -61,6 +69,7 @@ public class IterativeDeepening implements Solver {
     @Override
     public List<Piece> solve(Board board) {
         List<Piece> actions;
+        this.iterations = 0;
         for (int i = 1; i <= 100; i++) {
             actions = this.dfs(board, i);
             if (actions != null) {
@@ -69,6 +78,11 @@ public class IterativeDeepening implements Solver {
         }
         System.out.println("Not enough - try harder");
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Iterative deepening";
     }
 
 }

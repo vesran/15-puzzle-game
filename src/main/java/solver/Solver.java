@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface Solver {
     List<Piece> solve(Board b);
+    int getIterations();
 }

@@ -7,6 +7,13 @@ import java.util.*;
 
 public class BFS implements Solver {
 
+    private int iterations;
+
+    @Override
+    public int getIterations() {
+        return this.iterations;
+    }
+
     @Override
     public List<Piece> solve(Board board) {
         // State : piece to move
@@ -48,11 +55,17 @@ public class BFS implements Solver {
                     current = visited.get(current.toString());
                 }
                 Collections.reverse(actions);
+                this.iterations = i;
                 return actions;
             }
 
         }
         System.out.println("OUT");
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "BFS";
     }
 }

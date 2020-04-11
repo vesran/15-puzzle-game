@@ -8,6 +8,12 @@ import java.util.function.Function;
 
 public class AStar implements Solver {
 
+    private int iterations;
+
+    public int getIterations() {
+        return this.iterations;
+    }
+
     private int g(Board board) {
         return board.getDepth();
     }
@@ -79,12 +85,18 @@ public class AStar implements Solver {
                     current = visited.get(current.toString());
                 }
                 Collections.reverse(actions);
+                this.iterations = i;
                 return actions;
             }
 
         }
         System.out.println("OUT");
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "A*";
     }
 
 }
