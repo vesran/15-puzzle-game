@@ -39,7 +39,7 @@ the sum of each Manhattan distance between a tile's position to the position it 
 The heuristic is admissible and therefore, provides the shortest sequence of actions.
 
 ### Comparing solvers
-<img src="https://github.com/vesran/15-puzzle-game/blob/master/src/main/resources/benchmark.png" width="300" height="100">
+<img src="https://github.com/vesran/15-puzzle-game/blob/master/src/main/resources/benchmark.png" width="500">
 
 (based on a set of 10 puzzles of size 3x3).
 
