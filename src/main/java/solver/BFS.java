@@ -23,7 +23,7 @@ public class BFS implements Solver {
             current = toVisit.poll();
             visited.put(current.toString(), current);
 
-            System.out.println("Iteration i : " + ++i + " " + current.getPieces());
+            System.out.println("Iteration i : " + ++i + " " + current.getPieces() + " " + current.getDepth());
 
             for (Piece nextPiece : current.moveablePieces()) {
                 Board nextBoard = current.clone();
@@ -33,6 +33,7 @@ public class BFS implements Solver {
 
                 if (!visited.containsKey(nextBoard.toString())) {
                     toVisit.add(nextBoard);
+                    nextBoard.setDepth(current.getDepth() + 1);
                     nextBoard.setTriggered(nextBoard.pieceAt(epX, epY));
                 }
             }

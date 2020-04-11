@@ -14,8 +14,8 @@ public class Main {
 //        System.out.println(b.getPieces().get(1));
 //        System.out.println(s.manhattan(b, b.getPieces().get(1)));
 
-        List<Piece> list = s1.solve(b);
         List<Piece> list2 = s2.solve(b);
+        List<Piece> list = s1.solve(b);
         System.out.println(list);
         System.out.println(list.size());
         System.out.println(list2);

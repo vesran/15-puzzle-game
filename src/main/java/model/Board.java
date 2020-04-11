@@ -14,6 +14,7 @@ public class Board implements Cloneable {
     private int emptyPositionY;
     private Piece triggered;
     private int depth;
+    private int heuristicValue;
 
     private Board() {
         this.pieces = new ArrayList<>();
@@ -53,6 +54,14 @@ public class Board implements Cloneable {
 
     public Piece getTriggered() {
         return this.triggered;
+    }
+
+    public int getHeuristicValue() {
+        return this.heuristicValue;
+    }
+
+    public void setHeuristicValue(int value) {
+        this.heuristicValue = value;
     }
 
     public int getDepth() {

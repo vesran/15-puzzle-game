@@ -35,7 +35,7 @@ public class AStar implements Solver {
         HashMap<String, Board> visited = new HashMap<>();
         Queue<Board> toVisit = new PriorityQueue<>(new Comparator<Board>(){
 
-            final Function<Board, Integer> f = (b) -> g(b) + h(b);
+            final Function<Board, Integer> f = (b) -> 2*g(b) + b.getHeuristicValue();
 
             @Override
             public int compare(Board b1, Board b2) {
@@ -53,7 +53,7 @@ public class AStar implements Solver {
             current = toVisit.poll();
             visited.put(current.toString(), current);
 
-            System.out.println("Iteration i : " + ++i + " " + current.getPieces());
+            System.out.println("Iteration i : " + ++i + " " + current.getPieces() + " " + current.getHeuristicValue() + " " + current.getDepth());
 
             for (Piece nextPiece : current.moveablePieces()) {
                 Board nextBoard = current.clone();
@@ -62,9 +62,10 @@ public class AStar implements Solver {
                 nextBoard.move(nextBoard.pieceAt(nextPiece.getX(), nextPiece.getY()));
 
                 if (!visited.containsKey(nextBoard.toString())) {
+                    nextBoard.setHeuristicValue(this.h(nextBoard));
+                    nextBoard.setDepth(current.getDepth() + 1);
                     toVisit.add(nextBoard);
                     nextBoard.setTriggered(nextBoard.pieceAt(epX, epY));
-                    nextBoard.setDepth(current.getDepth() + 1);
                 }
             }
 
