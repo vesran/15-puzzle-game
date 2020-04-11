@@ -33,6 +33,16 @@ the time complexity of DFS and the minimal property of the solution.
 It uses a DFS algorithm with a limited depth search. 
 The limit is incremented until a solution is found. 
 
+#### A*
+The A* algorithm has given the best results so far. The heuristic used is 
+the sum of each Manhattan distance between a tile's position to the position it should be.
+The heuristic is admissible and therefore, provides the shortest sequence of actions.
+
+### Comparing solvers
+<img src="https://github.com/vesran/15-puzzle-game/blob/master/src/main/resources/benchmark.png" width="300" height="100">
+
+(based on a set of 10 puzzles of size 3x3).
+
 ### Acknowledgments
 This small project was a time-killer and a good exercise to improve my coding. Thanks to all the people who took a moment 
 to review my work.
